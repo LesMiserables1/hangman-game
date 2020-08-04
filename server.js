@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 
 const app = express()
 
-let word = 'DEVELOPER'
+let word = 'DAVID&nbsp;&nbspPINTAR&nbsp;&nbspNGGAK'
 
 app.use(bodyParser.urlencoded({extended : true}))
 app.use(bodyParser.json())

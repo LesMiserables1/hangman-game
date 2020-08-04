@@ -17,8 +17,13 @@ window.onload = function(){
 function show_hidden(word){
   hidden_char = ''
   for(let i = 0; i < word.length; ++i){
-    hidden_char += '_ '
+    if(word[i] == " "){
+      console.log(word[i])
+      hidden_char += '&nbsp;&nbsp';
+    }
+    else hidden_char += '_ '
   }
+  console.log(hidden_char)
   document.getElementById('word').innerHTML = hidden_char
 }
 function hide(id) {
@@ -61,11 +66,12 @@ function grade(payload){
     run_animation()
     return;
   }
-  
+
   let id = payload.id
   let el = document.getElementById('word')
   let rem_char = el.innerHTML;
   let guess_char = ''
+  console.log(rem_char)
   for(let i = 0; i < word.length; ++i){
     if (pos.includes(i) && rem_char[i*2] == '_'){
       guess_char += id 
